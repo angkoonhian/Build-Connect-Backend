@@ -1,4 +1,4 @@
-import express from 'express';
+import * as express from 'express';
 export const router = express.Router();
 import rateLimit from 'express-rate-limit';
 import { check } from 'express-validator';

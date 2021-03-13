@@ -1,5 +1,5 @@
-import path from 'path';
-import express, { Router } from 'express';
+import * as express from "express";
+import { Router } from 'express';
 
 import { router as usersRoute } from './api/users.route'
 import { router as authRoute } from './api/auth.route'

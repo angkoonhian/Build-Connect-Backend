@@ -1,4 +1,4 @@
-import express from 'express';
+import * as express from 'express';
 export const router = express.Router();
 
 // Include other resource's controllers to access their endpoints

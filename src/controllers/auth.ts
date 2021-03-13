@@ -11,18 +11,24 @@ export class AuthController {
      * @acces public 
      */
     login = async (req, res, next) => {
-        const { username, password } = req.body;
+
+        const username = req.body.username;
+        const password = req.body.password;
+        const email = req.body.email;
+
+        const user = await User.findOne({ _username: username })
+        //connectDB.collection('users').find({ username: username })
         
         // check if user is in the database or not
+        
         // Code here
-        const user = await User.findOne({ username })
 
         if (!user) {
             return next(new ErrorResponse('Invalid login credentials', 401));
         }
 
         // Check if password matches
-        const originalPassword = user.password;
+        const originalPassword = user._password;
         const isMatch = await checkPassword(password, originalPassword);
 
         if (!isMatch) {

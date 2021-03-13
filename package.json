@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server",
-    "server": "nodemon server"
+    "server": "nodemon server.ts"
   },
   "author": "Build-Connect",
   "license": "MIT",
@@ -31,7 +31,11 @@
     "xss-clean": "^0.1.1"
   },
   "devDependencies": {
+    "@types/express": "^4.17.11",
+    "@types/node": "^14.14.34",
     "concurrently": "^5.3.0",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.3"
   }
 }

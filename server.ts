@@ -1,8 +1,7 @@
-const express = require('express');
+import express from 'express';
 import connectDB from './config/db';
 import path from 'path';
 import dotenv from 'dotenv';
-import 'colors';
 import cookieParser from 'cookie-parser';
 import fileUpload from 'express-fileupload';
 import morgan from 'morgan';
@@ -40,9 +39,6 @@ app.use(xss());
 
 // Mount routers
 app.use('/api', apiRouter);
-
-// Init middleware
-app.use(express.json({ extended: false }));
 
 app.get('/', (req, res) => res.send('API Running'));
 
