@@ -1,4 +1,4 @@
 {
-    "mongoURI": "mongodb+srv://buildconnect2020:x_4.CGYB8R.JtDh@cluster0.djgwf.mongodb.net/<dbname>?retryWrites=true&w=majority",
+    "mongoURI": "mongodb+srv://Admin:buildconnect2020@buildconnect.izi7l.mongodb.net/BuildConnect?retryWrites=true&w=majority",
     "jwtSecret": "BCAsecret"
 }

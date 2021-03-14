@@ -16,13 +16,9 @@ export class AuthController {
         const password = req.body.password;
         const email = req.body.email;
 
-        const user = await User.findOne({ _username: username })
-        //connectDB.collection('users').find({ username: username })
+        const user = await User.findOne({ _username: "angkoonhian" })
         
         // check if user is in the database or not
-        
-        // Code here
-
         if (!user) {
             return next(new ErrorResponse('Invalid login credentials', 401));
         }
@@ -36,11 +32,13 @@ export class AuthController {
         }
 
         this.sendTokenResponse(user, 200, res);
+        console.log("passed")
     }
 
     //Helper method to get token from model, create cookie and send response
     private sendTokenResponse = (user, statusCode, res, redirectHome = false) => {
         // Create token
+        
         const token = getSignedJwtToken(user);
 
         // Set cookie options

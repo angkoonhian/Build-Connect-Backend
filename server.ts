@@ -10,6 +10,7 @@ import xss from 'xss-clean';
 import rateLimit from 'express-rate-limit';
 import hpp from 'hpp';
 import cors from 'cors';
+const pathToSwaggerUi = require('swagger-ui-dist').absolutePath()
 import { apiRouter } from './src/routes/api.route';
 import { errorHandler } from './src/middleware';
 
@@ -36,6 +37,9 @@ app.use(helmet());
 
 // Prevent XSS attacks
 app.use(xss());
+
+// Swagger documentation
+app.use(express.static(pathToSwaggerUi))
 
 // Mount routers
 app.use('/api', apiRouter);

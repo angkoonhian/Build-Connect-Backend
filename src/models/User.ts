@@ -7,17 +7,15 @@ export interface Iuser extends mongoose.Document {
 
 export const UserSchema = new mongoose.Schema({
     _username: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'users',
+        type: String,
         required: true,
         unique: true
     },
     _password: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'users',
+        type: String,
         required: true
     }
-});
+}, {collection: 'users'});
 
-const User = mongoose.model<Iuser>('user', UserSchema);
+const User = mongoose.model<Iuser>('users', UserSchema);
 export default User
