@@ -16,7 +16,7 @@ export class AuthController {
         const password = req.body.password;
         const email = req.body.email;
 
-        const user = await User.findOne({ _username: "angkoonhian" })
+        const user = await User.findOne({ _username: username })
         
         // check if user is in the database or not
         if (!user) {
